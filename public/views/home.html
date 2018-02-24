@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!-- Evita escala zoom -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- link a bootstrap 4 -->
+  <!-- <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css"> -->
+  <!-- link a fontawesome  -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <!-- link a materialize -->
+  <link rel="stylesheet" href="../vendors/materialize/css/materialize.min.css">
+  <!-- link a íconcs de materialize -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- link de googlefonts -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Acme|Righteous" rel="stylesheet"> -->
+  <!-- link para ícono que va en pestaña superior  -->
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/icons/favicon/"> -->
+  <!-- link main CSS -->
+  <link rel="stylesheet" href="../css/main.css">
+  <!-- Título de pestaña -->
+  <title></title>
+</head>
+
+<body>
+  <header>
+    <nav>
+
+    </nav>
+
+  </header>
+
+  <main>
+    <p>
+      :)
+    </p>
+    <section>
+      <div class="fixed-action-btn horizontal">
+        <a class="btn-floating btn-large red ">
+          <i id="btn-icon" class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+          <li>
+            <a id='message-modal' class="btn-floating red" href="#modal1">
+              <i class="material-icons">chat</i>
+            </a>
+          </li>
+          <li>
+            <a id='img-modal' class="btn-floating yellow" href="#modal1">
+              <i class="material-icons">perm_media</i>
+            </a>
+          </li>
+          <li>
+            <a id='video-modal' class="btn-floating blue" href="#modal1">
+              <i class="material-icons">video_library</i>
+            </a>
+          </li>
+          <li>
+            <a id='date-modal' class="btn-floating green" href="#modal1">
+              <i class="material-icons">today</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer>
+    <p class="text-center">Copyright&copy;</p>
+  </footer>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <!-- jQuery -->
+  <script type="text/javascript" src="../vendors/js/jquery-3.2.1.min.js"></script>
+  <!-- JS de bootstrap -->
+  <!-- <script type="text/javascript" src="vendors/bootstrap/js/bootstrap.min.js"></script> -->
+  <!-- JS de tooltip y popover -->
+  <!-- <script type="text/javascript" src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+  <!-- <script type="text/javascript" src="js/tooltip-popover.js"></script> -->
+  <!-- JS de materialize -->
+  <script src="../vendors/materialize/js/materialize.min.js"></script>
+  <!-- JS de modal de materialize -->
+  <script type="text/javascript" src="../js/modal-materialize.js"></script>
+  <!-- JS de proyecto -->
+  <script type="text/javascript" src="../js/app.js"></script>
+  <script type="text/javascript" src="../js/data.js"></script>
+</body>
+
+</html>
