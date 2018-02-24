@@ -1,5 +1,5 @@
 // Categoría de celulares y smartphones
-const api = `https://api.mercadolibre.com/categories/MPE1055`;
+const api = `https://api.mercadolibre.com/sites/MPE/search?q=smartphone&condition=new`;
 
 fetch(api)
   .then(function(response) {
@@ -7,12 +7,11 @@ fetch(api)
     return response.json();
   }).then(function(data) {
     // Todas las marcas de celulares y smartphones
-    console.log(data['children_categories']);
-    const phones = data['children_categories'];
+    console.log(data['results']);
+    const phones = data['results'];
 
     phones.forEach((phone) => {
-      const totalPhonesInThisCategory = phone['total_items_in_this_category'];
-      console.log(totalPhonesInThisCategory);
-      
+      const phonesInThisCategory = phone['title'];
+      console.log(phonesInThisCategory);  
     });
   });
