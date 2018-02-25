@@ -15,7 +15,6 @@ fetch(api)
     // console.log(phonesAvailableFiltersPrice);
     // console.log(phonesAvailableFiltersPriceRanges);
     // console.log(phonesAvailableFiltersProduct);
-    
 
     phones.forEach(function(phone) {
       const phoneTitlesInThisCategory = phone['title'];
@@ -35,7 +34,6 @@ fetch(api)
       // console.log('Cantidad de fracciones a pagar ' + phonesInstallmentsquantity);
       // console.log('Monto de fracción a pagar en S/ ' + phonesInstallmentsAmout);      
       
-
       /* FETCH DE PÁGINA CON INFORMACIÓN COMPLETA DE SMARTPHONES */
       fetch(fullInfoPhones)
         .then(function(response) {
