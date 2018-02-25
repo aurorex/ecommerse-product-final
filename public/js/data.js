@@ -27,9 +27,7 @@ fetch(api)
       const targetID = phone['id'];
       const fullInfoPhones = `https://api.mercadolibre.com/items/${targetID}`;
 
-
-      // const fullInfoPhones = phone['id'];
-      console.log('Nombre de cel ' + phoneTitlesInThisCategory);
+      // console.log('Nombre del cel ' + phoneTitlesInThisCategory);
       // console.log('Precio de cel en S/ ' + phonesPrices);
       // console.log('Cantidad disponible de cels ' + phonesAvailableQuantity);
       // console.log('Cantidad de cels vendidos ' + phonesSoldQuantity);   
@@ -52,8 +50,7 @@ fetch(api)
           
           /* FECTH DE DIVISA */
           const targetCurrency = recurso['currency_id'];
-          // console.log(targetCurrency);
-          
+          // console.log(targetCurrency);          
           const currencyLink = `https://api.mercadolibre.com/currencies/${targetCurrency}`;
           // console.log(currencyLink);
           fetch(currencyLink)
