@@ -26,26 +26,19 @@
 </head>
 
 <body>
-  <header>
-
-
-  </header>
-
-  <main>
-
     <div id="render_here">
       first place holder
     </div>
 
-    <div id="render_here_again">
+    <!-- <div id="render_here_again">
       second place holder
-    </div>
+    </div> -->
 
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
 
     <!-- Modal Structure -->
-    <div id="modal1" class="modal">
+    <!-- <div id="modal1" class="modal">
       <div class="modal-content">
         <h4>Modal Header</h4>
         <p>A bunch of text</p>
@@ -53,14 +46,9 @@
       <div class="modal-footer">
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
       </div>
-    </div>
+    </div> -->
 
 
-  </main>
-
-  <footer id="footer_here">
-
-  </footer>
 
   <!-- Firebase -->
   <!-- <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script> -->
@@ -78,8 +66,28 @@
   <!-- Handlebars -->
   <script type="text/x-handlebars-template" id="first-template">
     <div> 
-      <h1>{{title}}</h1>
-      <h2>{{{body}}}</h2>
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">{{title}}</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li>
+                <a href="sass.html">Sass</a>
+              </li>
+              <li>
+                <a href="badges.html">Components</a>
+              </li>
+              <li>
+                <a href="collapsible.html">JavaScript</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+      <h1 class="center-align">{{title}}</h1>
+      <h3 class="center-align">{{{logo}}}</h3>
+      
+      <div id="products">          
+      </div>
 
       <footer class="page-footer">
         <div class="container">
@@ -89,7 +97,7 @@
               <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
             </div>
             <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Links</h5>
+              <h5 class="white-text">{{{mainLink}}}</h5>
               <ul>
                 <li>
                   <a class="grey-text text-lighten-3" href="#!">{{Link}}</a>
@@ -101,7 +109,7 @@
                   <a class="grey-text text-lighten-3" href="#!">{{Link}}</a>
                 </li>
                 <li>
-                  <a class="grey-text text-lighten-3" href="#!">{{Link-3}}</a>
+                  <a class="grey-text text-lighten-3" href="#!">{{Link}}</a>
                 </li>
               </ul>
             </div>
@@ -109,7 +117,7 @@
         </div>
         <div class="footer-copyright">
           <div class="container">
-            © 2018 Copyright Text
+            © 2018 Copyright - <span>{{title}}</span>
             <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
           </div>
         </div>

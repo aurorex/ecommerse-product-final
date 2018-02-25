@@ -17,7 +17,7 @@ fetch(api)
     // console.log(phonesAvailableFiltersProduct);
     
 
-    phones.forEach((phone) => {
+    phones.forEach(function(phone) {
       const phoneTitlesInThisCategory = phone['title'];
       const phonesPrices = phone['price'];
       const phonesAvailableQuantity = phone['available_quantity'];

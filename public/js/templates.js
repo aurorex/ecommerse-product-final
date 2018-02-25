@@ -3,8 +3,9 @@ $(document).ready(function() {
   let template = Handlebars.compile(source);
 
   let context = {
-    title: 'All about Handlebars',
-    body: '<p>This is a post about tags</p>'
+    title: 'Buy Smart',
+    logo: '<p>Compra inteligente</p>',
+    mainLink: '<a href="https://www.google.com.pe/?gws_rd=ssl">Aquí</a>'
   };
   let el_html = template(context);
 
