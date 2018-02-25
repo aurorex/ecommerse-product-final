@@ -16,7 +16,7 @@ fetch(api)
     // console.log(phonesAvailableFiltersPriceRanges);
     // console.log(phonesAvailableFiltersProduct);
 
-    phones.forEach(function(phone) {
+    phones.forEach(function(phone, index) {
       const phoneTitlesInThisCategory = phone['title'];
       const phonesPrices = phone['price'];
       const phonesAvailableQuantity = phone['available_quantity'];
@@ -61,6 +61,26 @@ fetch(api)
               const realCurrencyStr = ans['description']; // Soles
               // console.log(realCurrency);  
               // console.log(realCurrencyStr);                          
+              let box = `<div class="container">
+                          <div class="row">
+                            </div><div class="col s3"> 
+                              <div class="card" data-id="${phone.id}">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                  <img class="activator" src="${phoneBigImg}">
+                                </div>
+                              <div class="card-content">
+                                <span class="activator grey-text text-darken-4">${phoneTitlesInThisCategory}<i class="material-icons right">more_vert</i></span>
+                                <p>${realCurrency + ' '+ phonesPrices}</p>
+                              </div>
+                              <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">${phoneTitlesInThisCategory}<i class="material-icons right">close</i></span>
+                                    <p> Here is some more information about this product that is only revealed once clicked on.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>`
+              $('#productos').append(box);
+              // $('.reference').find('#productos').append(box);
             });
         });
     });      

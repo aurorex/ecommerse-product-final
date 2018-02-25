@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   let context = {
     title: 'Buy Smart',
-    logo: '<p>Compra inteligente</p>',
+    logo: '<p>Tu compra inteligente</p>',
     mainLink: '<a href="https://www.google.com.pe/?gws_rd=ssl">Aquí</a>'
   };
   let el_html = template(context);
