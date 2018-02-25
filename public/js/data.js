@@ -9,6 +9,13 @@ fetch(api)
     // Todas las marcas de celulares y smartphones
     console.log(data['results']);
     const phones = data['results'];
+    const phonesAvailableFiltersPrice = data['available_filters'][4]['name']; // Filtro PRECIO
+    const phonesAvailableFiltersPriceRanges = data['available_filters'][4]['values']; // Array Filtro PRECIO RANGOS
+    const phonesAvailableFiltersProduct = data['available_filters'][14]['values']; // Array Filtro Nombre de celular
+    // console.log(phonesAvailableFiltersPrice);
+    // console.log(phonesAvailableFiltersPriceRanges);
+    // console.log(phonesAvailableFiltersProduct);
+    
 
     phones.forEach((phone) => {
       const phoneTitlesInThisCategory = phone['title'];
@@ -23,12 +30,13 @@ fetch(api)
 
       // const fullInfoPhones = phone['id'];
       console.log('Nombre de cel ' + phoneTitlesInThisCategory);
-      console.log('Precio de cel en S/ ' + phonesPrices);
-      console.log('Cantidad disponible de cels ' + phonesAvailableQuantity);
-      console.log('Cantidad de cels vendidos ' + phonesSoldQuantity);   
-      console.log('Enlace a info completa ' + fullInfoPhones);
-      console.log('Cantidad de fracciones a pagar ' + phonesInstallmentsquantity);
-      console.log('Monto de fracción a pagar en S/ ' + phonesInstallmentsAmout);
+      // console.log('Precio de cel en S/ ' + phonesPrices);
+      // console.log('Cantidad disponible de cels ' + phonesAvailableQuantity);
+      // console.log('Cantidad de cels vendidos ' + phonesSoldQuantity);   
+      // console.log('Enlace a info completa ' + fullInfoPhones);
+      // console.log('Cantidad de fracciones a pagar ' + phonesInstallmentsquantity);
+      // console.log('Monto de fracción a pagar en S/ ' + phonesInstallmentsAmout);      
+      
 
       /* FETCH DE PÁGINA CON INFORMACIÓN COMPLETA DE SMARTPHONES */
       fetch(fullInfoPhones)
