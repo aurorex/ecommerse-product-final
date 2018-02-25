@@ -28,7 +28,7 @@ fetch(api)
       console.log('Cantidad de cels vendidos ' + phonesSoldQuantity);   
       console.log('Enlace a info completa ' + fullInfoPhones);
       console.log('Cantidad de fracciones a pagar ' + phonesInstallmentsquantity);
-      console.log('Monto de fracción a pagar ' + phonesInstallmentsAmout);
+      console.log('Monto de fracción a pagar en S/ ' + phonesInstallmentsAmout);
 
       fetch(fullInfoPhones)
         .then(function(response) {
@@ -37,6 +37,19 @@ fetch(api)
         .then(function(recurso) {
           const phoneBigImg = recurso.pictures[0]['secure_url'];
           // console.log(recurso.pictures[0]['secure_url']);
+
+          /** ******************************************************* */
+          /* FECTH DE DIVISA */
+          const targetCurrency = recurso['currency_id'];
+          const currencyLink = `https://api.mercadolibre.com/currencies/${targetCurrency}`;
+          fetch(currencyLink)
+            .then(function(reply) {
+              return reply.json();
+            })
+            .then(function() {
+              const currency = reply.id;
+              console.log('Esta es la DIVISA' + currency);
+            });
         });
     });      
   });
