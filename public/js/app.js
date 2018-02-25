@@ -21,10 +21,10 @@ $(document).ready(function() {
   });	
 
   // función para el routing de el login de Mercado Libre
-  // page('https://auth.mercadolibre.com.pe/authorization?response_type=token&client_id=2884929440338550', login);
+  page('/home', login);
 
-  // function login() {
-  //   var page = document.querySelector('p');
-  //   page.innerHTML = 'LOGIN'; 
-  // }
+  function login() {
+    var page = document.querySelector('p');
+    page.innerHTML = 'LOGIN'; 
+  }
 });

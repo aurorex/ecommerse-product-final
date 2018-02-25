@@ -9,15 +9,27 @@
   },
   "repository": {
     "type": "git",
+<<<<<<< HEAD
     "url": "git+https://github.com/aurorex/ecommerse-product-final.git"
+=======
+    "url": "git+https://github.com/LizbethFP/ecommerse-product-final.git"
+>>>>>>> upstream/master
   },
   "author": "",
   "license": "ISC",
   "bugs": {
+<<<<<<< HEAD
     "url": "https://github.com/aurorex/ecommerse-product-final/issues"
   },
   "homepage": "https://github.com/aurorex/ecommerse-product-final#readme",
   "dependencies": {
     "express": "^4.16.2"
+=======
+    "url": "https://github.com/LizbethFP/ecommerse-product-final/issues"
+  },
+  "homepage": "https://github.com/LizbethFP/ecommerse-product-final#readme",
+  "dependencies": {
+    "handlebars": "^4.0.11"
+>>>>>>> upstream/master
   }
 }
