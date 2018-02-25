@@ -30,25 +30,33 @@ fetch(api)
       console.log('Cantidad de fracciones a pagar ' + phonesInstallmentsquantity);
       console.log('Monto de fracción a pagar en S/ ' + phonesInstallmentsAmout);
 
+      /* FETCH DE PÁGINA CON INFORMACIÓN COMPLETA DE SMARTPHONES */
       fetch(fullInfoPhones)
         .then(function(response) {
+          // console.log(response);          
           return response.json();         
         })
         .then(function(recurso) {
           const phoneBigImg = recurso.pictures[0]['secure_url'];
+          const phoneWarranty = recurso.warranty; // Garantía diferente para cada producto (6 meses, 1 año, boleta, null)
           // console.log(recurso.pictures[0]['secure_url']);
-
-          /** ******************************************************* */
+          // console.log(phoneWarranty);
+          
           /* FECTH DE DIVISA */
           const targetCurrency = recurso['currency_id'];
+          // console.log(targetCurrency);
+          
           const currencyLink = `https://api.mercadolibre.com/currencies/${targetCurrency}`;
+          // console.log(currencyLink);
           fetch(currencyLink)
-            .then(function(reply) {
-              return reply.json();
+            .then(function(answer) {
+              return answer.json();
             })
-            .then(function() {
-              const currency = reply.id;
-              console.log('Esta es la DIVISA' + currency);
+            .then(function(ans) {
+              const realCurrency = ans['symbol']; // S/
+              const realCurrencyStr = ans['description']; // Soles
+              // console.log(realCurrency);  
+              // console.log(realCurrencyStr);                          
             });
         });
     });      
