@@ -82,21 +82,11 @@ fetch(api)
                           </div>
                         </div>`;
               $('#products').append(box);
-<<<<<<< HEAD
-          },
-          error:function(error){
-            console.log(error);
-          }
-        });	
-      });
-
-=======
             },
             error: function(error) {
               console.log(error);
             }
-          });
+          });	
         });
->>>>>>> upstream/master
     });
   });
