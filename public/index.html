@@ -24,18 +24,11 @@
      <title></title>
   </head>
   <body>
-    <header class="nav-extended">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h1></h1>
-          </div>
-          <nav>
-            
-          </nav>
-        </div>
-      </div>
-    </header>
+    <div class="reference" id="render_here">
+      first place holder
+    </div>
+
+
     <main>
       <section>
         <div class="container">
@@ -43,16 +36,34 @@
             <div class="col">
               <img src="" alt="">
             </div>
-            <div class="col center">
-              <a  class="waves-effect waves-light btn" href="https://auth.mercadolibre.com.pe/authorization?response_type=token&client_id=2884929440338550">LOGIN</a>
+            <div class="front-btn center-align">
+              <a  class="waves-effect waves-light btn cyan darken-4 center-align" href="https://auth.mercadolibre.com.pe/authorization?response_type=token&client_id=2884929440338550">Iniciar sesión</a>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <p class="text-center">Copyright&copy;</p>
+    <footer class="page-footer light-blue darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Buy Smart</h5>
+            <p class="grey-text text-lighten-4">En este portal, podrás encontrar las mejores ofertas de smartphones para que hagas la mejor compra para ti.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">
+              <a href="#up" id="goback">Volver arriba</a>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2018 Copyright - Buy Smart
+          <a class="grey-text text-lighten-4 right" href="https://www.mercadolibre.com.pe/">Ir a página fuente</a>
+        </div>
+      </div>
     </footer>
 
     <!-- Firebase -->
@@ -68,6 +79,34 @@
     <script src="vendors/materialize/js/materialize.min.js"></script>
     <!-- JS de modal de materialize -->
     <script type="text/javascript" src="js/modal-materialize.js"></script>
+    <!-- Handlebars -->
+    <script type="text/x-handlebars-template" id="first-template">
+        <div> 
+            <nav>
+              <div class="nav-wrapper light-blue darken-4" id="up">
+                <a href="home.html" class="brand-logo">{{title}}</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li id="username"></li>
+                  <li id="lastname"></li>
+                  <!-- <li>
+                    <a href=".html">Iniciar sesión</a>
+                  </li> -->
+                  <li>
+                    <a href="http://www.mercadolibre.com/jms/mpe/lgz/logout?go=https%3A%2F%2Fauth.mercadolibre.com.pe%2Fauthorization%3Fresponse_type%3Dcode%26client_id%3D2884929440338550&platform_id=ml
+                    ">Cerrar sesión</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+    
+          <h1 class="center-align indigo-text darken-4-text">{{title}}</h1>
+          <h3 class="center-align indigo-text darken-4-text">{{{logo}}}</h3>
+    
+        </div>
+      </script>
+    <!-- JS de handlebars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="js/templates.js"></script>
     <!-- JS de proyecto -->
     <script type="text/javascript" src="js/app.js"></script>
   </body>
