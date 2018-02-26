@@ -66,7 +66,11 @@ fetch(api)
                                 <span class="card-title bg-text">${phoneTitlesInThisCategory}<i class="material-icons right">close</i></span>
                                 <div class="card-image">
                                   <img class="activator" src="${recurso.pictures[1]['secure_url']}">
-                                  <a class="btn btn-floating  halfway-fab btn-large cyan pulse right deep-purple darken-4"><i class="material-icons">add_shopping_cart</i></a>
+                                  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                  <input type="hidden" name="cmd" value="_s-xclick">
+                                  <input type="hidden" name="hosted_button_id" value="QCG627XNVVVJE">
+                                  <button name="submit"  src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_buynowCC_LG.gif" class="btn btn-floating  halfway-fab btn-large cyan pulse right deep-purple darken-4"><i class="material-icons">add_shopping_cart</i></button>
+                                  </form>
                                 </div>
                                 <div>
                                 <p>Puedes comprarlo en cuotas.</p>
@@ -84,10 +88,7 @@ fetch(api)
             console.log(error);
           }
         });	
-      
-
       });
-
 
     });
       
