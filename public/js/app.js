@@ -1,9 +1,9 @@
 $(document).ready(function() {
   var parseUrl = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;
   
-  var arrRuta = parseUrl.exec(window.location.href);
+  const arrRuta = parseUrl.exec(window.location.href);
   console.log(arrRuta[7].split('=')[1]);
-  var accessToken = arrRuta[7].split('=')[1];
+  const accessToken = arrRuta[7].split('=')[1];
   
   $.ajax({
 	  dataType: 'json',
@@ -13,7 +13,12 @@ $(document).ready(function() {
 	  	console.log('enviando....');
 	  },
 	  success: function(data) {
-	  	console.log(data);	
+      console.log(data);
+      const username = $('#username');
+      const lastname = $('#lastname');
+      username.append(data.first_name + '&nbsp;'); 
+      lastname.append(data.last_name); 	
+	
 	  },
 	  error: function(error) {
 	  	console.log(error);
