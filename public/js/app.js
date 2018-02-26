@@ -21,10 +21,10 @@ $(document).ready(function() {
   });	
 
   // función para el routing de el login de Mercado Libre
-  page('/home', login);
-
-  function login() {
-    var page = document.querySelector('p');
-    page.innerHTML = 'LOGIN'; 
-  }
+  // page('/home', login);
+  
+  // function login() {
+  //   var page = document.querySelector('p');
+  //   page.innerHTML = 'LOGIN'; 
+  // }
 });
