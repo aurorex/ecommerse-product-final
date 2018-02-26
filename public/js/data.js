@@ -60,26 +60,39 @@ fetch(api)
               const realCurrency = ans['symbol']; // S/
               const realCurrencyStr = ans['description']; // Soles
               // console.log(realCurrency);  
-              // console.log(realCurrencyStr);                          
+              // console.log(realCurrencyStr); 
+              
+              /* CREAR CAJA INFORMATIVA DE LOS SMARTPHONES */
               let box = `<div class="container">
                           <div class="row">
                             </div><div class="col s3"> 
-                              <div class="card" data-id="${phone.id}">
-                                <div class="card-image waves-effect waves-block waves-light">
+                              <div class="card hoverable" data-id="${phone.id}">
+                                <div class="card-image waves-effect waves-block">
                                   <img class="activator" src="${phoneBigImg}">
                                 </div>
                               <div class="card-content">
-                                <span class="activator grey-text text-darken-4">${phoneTitlesInThisCategory}<i class="material-icons right">more_vert</i></span>
-                                <p>${realCurrency + ' '+ phonesPrices}</p>
+                                <span class="activator grey-text text-darken-4 bg-front-text">${phoneTitlesInThisCategory}<i class="material-icons right">more_vert</i></span>
+                                <p class="indigo-text darken-4-text bg-price">${realCurrency + ' '+ phonesPrices}</p>
+                                <p class="">${'Disponibles: ' + phonesAvailableQuantity}</p>
+                                <p class="">${'Vendidos: ' + phonesSoldQuantity}</p>
                               </div>
-                              <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">${phoneTitlesInThisCategory}<i class="material-icons right">close</i></span>
-                                    <p> Here is some more information about this product that is only revealed once clicked on.</p>
+                              <div class="card-reveal blue lighten-4">
+                                <span class="card-title bg-text">${phoneTitlesInThisCategory}<i class="material-icons right">close</i></span>
+                                <div class="card-image">
+                                  <img class="activator" src="${recurso.pictures[1]['secure_url']}">
+                                  <a class="btn btn-floating  halfway-fab btn-large cyan pulse right deep-purple darken-4"><i class="material-icons">add_shopping_cart</i></a>
+                                </div>
+                                <div>
+                                <p>Puedes comprarlo en cuotas.</p>
+                                <p class="">${'Cuotas de: ' + phonesInstallmentsquantity}</p>
+                                <p class="">${'Montos de: ' + realCurrency + ' ' + phonesInstallmentsAmout}</p>
+                                <p class="indigo-text darken-4-text bg-price">${'Total ' + realCurrency + ' ' + phonesPrices}</p>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>`
-              $('#productos').append(box);
+              $('#products').append(box);
               // $('.reference').find('#productos').append(box);
             });
         });

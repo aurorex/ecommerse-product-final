@@ -1,3 +1,30 @@
 /* Clases reutilizables */
 
 /* Clases específicas */
+nav {
+  margin-bottom: 2%;
+}
+
+.brand-logo {
+  margin-left: 2%;
+}
+
+.bg-front-text {
+  font-size: 18px;
+}
+
+.bg-price {
+  font-size: 20px;
+}
+
+.bg-text {
+  font-size: 28px!important;
+}
+
+footer {
+  margin-top: 2%;
+}
+
+#goback {
+  color: white!important;
+}
