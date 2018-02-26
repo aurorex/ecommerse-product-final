@@ -7,7 +7,7 @@ fetch(api)
     return response.json();
   }).then(function(data) {
     // Todas las marcas de celulares y smartphones
-    //console.log("Resultados ==>",data['results']);
+    // console.log("Resultados ==>",data['results']);
     const phones = data['results'];
     const phonesAvailableFiltersPrice = data['available_filters'][4]['name']; // Filtro PRECIO
     const phonesAvailableFiltersPriceRanges = data['available_filters'][4]['values']; // Array Filtro PRECIO RANGOS
@@ -16,7 +16,6 @@ fetch(api)
     // console.log(phonesAvailableFiltersPriceRanges);
     // console.log(phonesAvailableFiltersProduct);
     phones.forEach(function(phone, index) {
-    
       const phoneTitlesInThisCategory = phone['title'];
       const phonesPrices = phone['price'];
       const phonesAvailableQuantity = phone['available_quantity'];
@@ -27,27 +26,27 @@ fetch(api)
       const fullInfoPhones = `https://api.mercadolibre.com/items/${targetID}`;
 
       fetch(fullInfoPhones)
-      .then(function(response) {         
-        return response.json();         
-      })
-      .then(function(recurso) {
-        console.log("Recurso",recurso);
-        const phoneBigImg = recurso.pictures[0]['secure_url'];
-        const phoneWarranty = recurso.warranty; // Garantía diferente para cada producto (6 meses, 1 año, boleta, null)
-        // console.log(recurso.pictures[0]['secure_url']);
-        // console.log(phoneWarranty);
-        const targetCurrency = recurso['currency_id'];
-        // console.log(targetCurrency);          
-        const currencyLink = `https://api.mercadolibre.com/currencies/${targetCurrency}`;
-        console.log(currencyLink);
+        .then(function(response) {         
+          return response.json();         
+        })
+        .then(function(recurso) {
+          console.log('Recurso', recurso);
+          const phoneBigImg = recurso.pictures[0]['secure_url'];
+          const phoneWarranty = recurso.warranty; // Garantía diferente para cada producto (6 meses, 1 año, boleta, null)
+          // console.log(recurso.pictures[0]['secure_url']);
+          // console.log(phoneWarranty);
+          const targetCurrency = recurso['currency_id'];
+          // console.log(targetCurrency);          
+          const currencyLink = `https://api.mercadolibre.com/currencies/${targetCurrency}`;
+          console.log(currencyLink);
 
-        $.ajax({
-          type:"GET",
-          url:currencyLink,
-          dataType:'json',
-          success:function(ans){
-            console.log(data);
-            const realCurrency = ans['symbol']; // S/
+          $.ajax({
+            type: 'GET',
+            url: currencyLink,
+            dataType: 'json',
+            success: function(ans) {
+              console.log(data);
+              const realCurrency = ans['symbol']; // S/
               const realCurrencyStr = ans['description'];
               let box = `<div class="container">
                           <div class="row">
@@ -58,7 +57,7 @@ fetch(api)
                                 </div>
                               <div class="card-content">
                                 <span class="activator grey-text text-darken-4 bg-front-text">${phoneTitlesInThisCategory}<i class="material-icons right">more_vert</i></span>
-                                <p class="indigo-text darken-4-text bg-price">${realCurrency + ' '+ phonesPrices}</p>
+                                <p class="indigo-text darken-4-text bg-price">${realCurrency + ' ' + phonesPrices}</p>
                                 <p class="">${'Disponibles: ' + phonesAvailableQuantity}</p>
                                 <p class="">${'Vendidos: ' + phonesSoldQuantity}</p>
                               </div>
@@ -77,18 +76,13 @@ fetch(api)
                               </div>
                             </div>
                           </div>
-                        </div>`
+                        </div>`;
               $('#products').append(box);
-          },
-          error:function(error){
-            console.log(error);
-          }
-        });	
-      
-
-      });
-
-
+            },
+            error: function(error) {
+              console.log(error);
+            }
+          });
+        });
     });
-      
   });
